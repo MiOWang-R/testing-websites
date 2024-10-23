@@ -1,0 +1,197 @@
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(67, 67, 67);
+    border-radius: 10px;
+}
+
+body {
+    background-color: rgb(51, 51, 51);
+    color: white;
+    font-family: Arial;
+}
+
+p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: inline-block;
+}
+
+.container {
+    background-color: rgb(50, 50, 50);
+    display: block;
+    margin: auto;
+    width: 500px;
+    height: 530px;
+    margin-top: 25px;
+    text-align: center;
+    border-radius: 60px;
+    position: relative;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+.container::after, .container::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), rgb(255, 255, 255), rgb(255, 255, 255), transparent);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 2px;
+    border-radius: 60px;
+    animation: 3s spin linear infinite;
+}
+
+@keyframes spin{
+    from{
+      --angle: 360deg;
+    }
+    to{
+      --angle: 0deg;
+    }
+}
+
+.container::before {
+    filter: blur(12px) ;
+    opacity: 0.8;
+
+}
+
+.title {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.15s;
+    cursor: pointer;
+}
+
+.title:hover, .title:active {
+    text-shadow: 0 0 15px white;
+}
+
+.email-box, .password-box {
+    margin-top: 20px;
+    font-size: 16px;
+    box-shadow: 0 0 8px white;
+    border-width: none;
+    border-style: none;
+    border-radius: 25px;
+    padding: 10px 15px;
+    text-align: left;
+    width: 300px;
+    transition: 0.4s;
+}
+
+.email-box:hover, .password-box:hover,
+.email-box:focus, .password-box:focus  {
+    box-shadow: 0 0 15px white;
+    border-width: none;
+    border-style: none;
+    
+}
+
+.checkbox {
+    display: inline-block;
+    margin-top: 20px;
+    box-shadow: 0 0 3px white;
+    text-align: left;
+}
+
+.privacy {
+    font-weight: bold;
+    font-size: 10px;
+    margin-top: 20px;
+    vertical-align: top;
+
+}
+
+.login-button { 
+    margin-top: 20px;
+    margin-bottom: 80px;
+    box-shadow: 0 0 7px white;
+    border-width: none;
+    border-style: none;
+    border-radius: 25px;
+    padding: 8px 20px;
+    transition: 0.2s;
+}
+
+.login-button:hover { 
+    box-shadow: 0 0 10px white;
+}
+
+.login-button:active {
+    box-shadow: 0 0 3px rgb(33, 33, 33);
+}
+
+.signup-link, .login-link, .home-link {
+    background-color: white;
+    color: black;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-left: 0px;
+    padding: 8px 15px;
+    border-radius: 0px;
+    text-decoration: none;
+    box-shadow: 0 0 5px gray;
+    transition: 0.2s;
+}
+
+.login-link {
+    background-color: rgb(78, 78, 78);
+    color: white;
+}
+
+.signup-link:hover, .login-link:hover, .home-link:hover {
+    box-shadow: 0 0 10px gray;
+    padding: 8px 25px 8px 25px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.signup-link:active, .login-link:active, .home-link:active {
+    box-shadow: 0 0 8px rgb(47, 47, 47);
+}
+
+.continue-with {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.FB-image, .GG-image {
+    width: 35px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    transition: 0.2s;
+}
+
+.FB-image:hover, .GG-image:hover {
+    box-shadow: 0 0 12px white;
+}
+
+.FB-image:active, .GG-image:active {
+    box-shadow: 0 0 8px white;
+}
+
+
+
+
+
